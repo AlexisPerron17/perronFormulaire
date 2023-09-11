@@ -1,0 +1,40 @@
+/**
+* @author Prenom Nom courriel
+* @todo Importer la fonte Futura
+* @todo Personnaliser les variables selon les spécifications du guide visuel
+*       Certaines variables devront être définies par une fonction de coloration
+* @todo Compléter selon l'énoncé de l'exercice
+* @todo Utiliser le sélecteur & pour les sélecteurs des différentes couleurs
+*/
+
+/** Polices de caractères **/
+
+@font-face {
+  font-family: 'Avenir, sans-serif';
+  font-family: 'CamptonBook, sans-serif';
+  src: 	url('../../../../public/liaisons/fonts/Avenir.ttc') format('truetype');
+  src:  url('../../../../public/liaisons/fonts/CamptonBook.otf') format('truetype');
+}
+
+
+$fontePrimaire : Avenir, sans-serif;
+$fonteSecondaire : 'CamptonBook, sans-serif';
+
+/** Palette de couleurs **/
+// Utiliser http://chir.ag/projects/name-that-color pour obtenir des noms uniques et mémorisables
+// Permettez-vous d'utiliser un nom de variable plus explicite si la suggestion de name-that-color est trop étrange
+
+/* Couleurs de base */
+$bleuFonce: #27A595;
+$bleuPale: #64B6AC;
+$vertLime: #bbd531;
+$bleuMinuit: #012d61;
+$bleuMarin: #2678B5;
+
+// $bleuMoyenTransparent : transparentize($bleuMoyen, 0.50);
+
+/* Autres couleurs */
+$hyperlien: $bleuMarin;
+
+/** Points de rupture **/
+$desktop : 601px;

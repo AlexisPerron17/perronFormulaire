@@ -1,0 +1,109 @@
+.main {
+    padding: 0px 20px;
+    // float: left;
+}
+
+.header {
+    background-color: #64B6AC;
+    padding: 30px 20px;
+    .titre{
+        margin:0;
+    }
+}
+
+// TYPE DE DON ET MONTANT
+// BOUTON RADIO TYPE DE DON
+.div__typedon {
+    display: flex;
+    margin-bottom: 3rem;
+    overflow: hidden;
+}
+.div__typedon input {
+    position: absolute !important;
+    clip:rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    border: 3px;
+    overflow: hidden;
+}
+
+.div__typedon label {
+    background-color: white;
+    font-size: 18px;
+    line-height: 1;
+    text-align: center;
+    padding: 17px 16px 15px;
+    border: 3px solid black;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+}
+.label_type:last-child {
+    margin-left: 10px;
+}
+
+.div__typedon label:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    border: 3px solid $bleuFonce;
+}
+
+
+.div__typedon input{
+    font-size: 18px;
+    line-height: 1;
+    text-align: center;
+    transition: all 0.1s ease-in-out;
+    overflow: hidden;
+
+}
+
+.div__typedon input:checked + label{
+    border: 3px solid $bleuFonce;
+    
+}
+
+// BOUTON DU MONTANT
+
+.div__listedon {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+    overflow: hidden;
+}
+.div__listedon input {
+    position: absolute !important;
+    clip:rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    border: 3px;
+    overflow: hidden;
+}
+
+.div__listedon label {
+    background-color: white;
+    font-size: 18px;
+    line-height: 1;
+    text-align: center;
+    padding: 13px 6px 10px;
+    margin: 0 5px 1rem;
+    border: 3px solid black;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.div__listedon label:hover {
+    cursor: pointer;
+    border: 3px solid $bleuFonce;
+    text-decoration: underline;
+}
+
+.div__listedon input{
+    font-size: 18px;
+    line-height: 1;
+    text-align: center;
+    overflow: hidden;
+}
+
+.div__listedon input:checked + label{
+    border: 3px solid $bleuFonce;
+}
