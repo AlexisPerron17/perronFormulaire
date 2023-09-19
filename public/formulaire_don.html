@@ -16,15 +16,6 @@
 
     <main class="main">
         <div id="container">
-
-            <div class="stepleft">
-                <ul id="stepleft">
-                    <li class="active"> <p>1</p> <p>VOTRE DON</p> </li>
-                    <li> <p>2</p> <p>INFORAMTIONS SUR VOUS</p> </li>
-                    <li> <p>3</p> <p>DONNER</p> </li>
-                </ul>
-            </div>
-
             <h1>Changer la vie des portes brisées avec <b>votre don</b></h1>
             <p class="texte">Chaque porte brisée raconte une histoire de résilience et de détermination.
                 Rejoignez-nous dans
@@ -35,12 +26,20 @@
                 <br><br>Redonnez de l’espoir, un don à la fois
             </p>
 
+            <div class="stepleft">
+                <ul id="stepleft">
+                    <li class="active">VOTRE DON</li>
+                    <li>INFORMATIONS SUR VOUS</li>
+                    <li>DONNER</li>
+                </ul>
+            </div>
+
+
             <form action="#" class="formulaire" method="get">
                 <!--CHOISIR LE TYPE DE DON-->
-                <h2>Choisissez votre type de don</h2>
-                <section class="section__don">
+                <div class="section__don">
+                <h2 class="h2"><b>Choisissez votre type de don</b></h2>
                     <fieldset class="formulaire__typedon">
-                        <legend class="formulaire__legende">Type de don</legend>
                         <div class="div__typedon">
                             <input required class="input_type1" type="radio" name="typedon" value="donUnique"
                                 id="donUnique">
@@ -68,195 +67,234 @@
                             <br>
                             <input required type="radio" name="montant" id="autre">
                             <label for="autre">autre</label>
+
+                            <span class="erreur" id="erreur_montant"></span>
                         </div>
 
 
-                        <div class="checkbox__porteraide">
-                            <p>Ajouter de la porté à votre aide</p>
+                        <div class="checkbox">
+                            <p class="texte">Ajouter de la porté à votre aide</p>
                             <input type="checkbox" name="aide" id="aide">
-                            <label for="aide">Oui, je veux ajouter un montant de 10$ pour aider le centre d’aide des
-                                portes
+                            <label for="">Oui, je veux ajouter un montant de 10$ pour aider le centre d’aide des portes
                                 brisées à aller aider des portes brisées qui sont victime de catastrophes
                                 naturelles</label>
                         </div>
-        </div>
 
-        <input class="boutonSuivant" type="button" name="bouttonsuivant" value="Continuer">
-        </fieldset>
-        </section>
-
-        <!--INFORMATION SUR LE DONATEUR-->
-        <section class="section__info">
-            <h1 class="h1"><b>Vos informations</b></h1>
-            <fieldset>
-                <div class="don_autre_nom">
-                    <input type="checkbox" name="organisation" id="organisation">
-                    <label for="organisation">Faire un don au nom d'une organisation</label>
-
-                    <input type="checkbox" name="memoire" id="memoire">
-                    <label for="memoire">Faire un don à la mémoire d'un proche</label>
+                        <div class="div_boutonsuivant">
+                            <input class="boutonsuivant" type="button" name="boutonsuivant" value="Continuer">
+                        </div>
+                    </fieldset>
                 </div>
 
-                <div class="informations">
-                    <div class="prenom">
-                        <label for="prenom">Prénom*</label>
-                        <input required type="text" name="prenom" id="prenom">
-                    </div>
-                    <div class="nom">
-                        <label for="nom">Nom de famille*</label>
-                        <input required type="text" name="nom" id="nom">
-                    </div>
-                    <div class="adresse">
-                        <label for="adresse">Adresse*</label>
-                        <input required type="text" name="adresse" id="adresse">
-                    </div>
-                    <div class="codepostale">
-                        <label for="codepostale">Code postale*</label>
-                        <input required type="text" name="codepostale" id="codepostale">
-                    </div>
-                    <div class="ville">
-                        <label for="ville">Ville*</label>
-                        <input required type="text" name="ville" id="ville">
-                    </div>
-                    <div class="pays">
-                        <label for="pays">Pays</label>
-                        <select required name="pays" id="pays">
-                            <option value>Choisissez un pays</option>
-                            <option value="CA">Canada</option>
-                            <option value="US">États-Unies</option>
-                            <option value="ME">Mexique</option>
-                            <option value="FR">France</option>
-                            <option value="AN">Angleterre</option>
-                        </select>
-                    </div>
-                    <div class="provinces">
-                        <label required for="provinces">Provinces / État*</label>
-                        <select required name="provinces" id="provinces">
-                            <option value>Choisissez une province</option>
-                            <option value="ON">Ontario</option>
-                            <option value="QC">Québec</option>
-                            <option value="NE">Nouvelle-Écosse</option>
-                            <option value="MA">Manitoba</option>
-                            <option value="CB">Colombie-Britannique</option>
-                            <option value="ID">Île-du-Prince-Édouard</option>
-                            <option value="SK">Saskatchewan</option>
-                        </select>
-                    </div>
+                <!--INFORMATION SUR LE DONATEUR-->
+                <div class="section__info">
+                    <h2 class="h2"><b>Vos informations</b></h2>
+                    <fieldset class="formulaire__informations">
+                        <div class="don_autre_nom">
+                            <div class="organisation">
+                                <input type="radio" name="autrenom" id="organisation">
+                                <label for="organisation">Faire un don au nom d'une organisation</label>
+                            </div>
 
-                    <div class="numero">
-                        <label for="numero">Numéro de téléphone*</label>
-                        <input required type="text" name="numero" id="numero">
+                            <div class="memoire">
+                                <input type="radio" name="autrenom" id="memoire">
+                                <label for="memoire">Faire un don à la mémoire d'un proche</label>
+                            </div>
+                        </div>
 
-                        <label for="poste">Poste</label>
-                        <input type="text" name="poste" id="poste">
-                    </div>
+                        <div class="informations">
+                            <p class="texte">* : Champ obligatoire</p>
+                            <div class="prenom">
+                                <label for="prenom">Prénom*</label>
+                                <input required type="text" name="prenom" id="prenom" pattern="^[a-zA-ZÀ-ÿ -/']+$">
+                                <span class="erreur" id="erreur_prenom"></span>
+                            </div>
+                            <div class="nom">
+                                <label for="nom">Nom de famille*</label>
+                                <input required type="text" name="nom" id="nom" pattern="^[a-zA-ZÀ-ÿ -/']+$">
+                                <span class="erreur" id="erreur_nom"></span>
+                            </div>
+                            <div class="adresse">
+                                <label for="adresse">Adresse*</label>
+                                <input required type="text" name="adresse" id="adresse" pattern="\b\d{1,5}\s[0-9A-Za-z\s.'-]+\b">
+                                <span class="erreur" id="erreur_adresse"></span>
+                            </div>
+                            <div class="codepostal">
+                                <div class="div_exemple">
+                                    <label for="codepostal">Code postale*</label>
+                                    <p class="exemple">Exemple: A1B 2C3</p>
+                                </div>
+                                <input required type="text" name="codepostal" id="codepostal" pattern="^[ABCEGHJ-NPRSTVXY]{1}\d{1}[A-Z]{1}\s?\d{1}[A-Z]{1}\d{1}$">
+                                <span class="erreur" id="erreur_codepostal"></span>
+                            </div>
+                            <div class="ville">
+                                <label for="ville">Ville*</label>
+                                <input required type="text" name="ville" id="ville" pattern="^[A-Za-z\s.'-]+$">
+                                <span class="erreur" id="erreur_ville"></span>
+                            </div>
+                            <div class="pays">
+                                <label for="pays">Pays*</label>
+                                <select required name="pays" id="pays">
+                                    <option value>Choisissez un pays</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="US">États-Unies</option>
+                                    <option value="ME">Mexique</option>
+                                    <option value="FR">France</option>
+                                    <option value="AN">Angleterre</option>
+                                </select>
+                                <span class="erreur" id="erreur_pays"></span>
+                            </div>
+                            <div class="provinces">
+                                <label required for="provinces">Provinces / État*</label>
+                                <select required name="provinces" id="provinces">
+                                    <option value>Choisissez une province</option>
+                                    <option value="ON">Ontario</option>
+                                    <option value="QC">Québec</option>
+                                    <option value="NE">Nouvelle-Écosse</option>
+                                    <option value="MA">Manitoba</option>
+                                    <option value="CB">Colombie-Britannique</option>
+                                    <option value="ID">Île-du-Prince-Édouard</option>
+                                    <option value="SK">Saskatchewan</option>
+                                </select>
+                                <span class="erreur" id="erreur_provinces"></span>
+                            </div>
 
-                    <div class="courriel">
-                        <label for="courriel">Courriel*</label>
-                        <input type="text" name="courriel" id="courriel">
-                    </div>
+                            <div class="telephone">
+                                <div class="div_exemple">
+                                    <label for="telephone">Numéro de téléphone*</label>
+                                    <p class="exemple">Exemple: 418-123-4567</p>
+                                </div>
+                                <input required type="text" name="telephone" id="telephone" pattern="^[(]?\d{3}[-.)]?[ ]?\d{3}[-.]?\d{4}\b$">
+                                <span class="erreur" id="erreur_telephone"></span>
+                            </div>
+                            <div class="poste">
+                                <label for="poste">Poste</label>
+                                <input type="text" name="poste" id="poste">
+                            </div>
 
-                    <div class="newsletter">
-                        <input type="checkbox" name="newsletter" id="newsletter">
-                        <label for="newsletter">Je souhaite recevoir des mise à jour et des renseignements sur
-                            le centre d’aide des portes brisées par courriel</label>
-                    </div>
-                    <div class="bouton_navig">
-                        <input type="button" name="retour" value="Retour">
-                        <input type="button" name="bouttonsuivant" value="Paiement">
-                    </div>
-                </div>
-            </fieldset>
-        </section>
 
-        <!--SECTION PAIEMENT-->
-        <section class="section__paiement">
-            <fieldset>
-                <div class="div__typepaiement">
-                    <div class="cartecredit">
-                        <input required type="radio" name="credit" id="credit">
-                        <label for="credit">Carte de crédit</label>
-                    </div>
-                    <div class="paypal">
-                        <input required type="radio" name="paypal" id="paypal">
-                        <label for="paypal">Paypal</label>
-                    </div>
-                </div>
-
-                <div class="titulaire">
-                    <label for="titulaire">Nom du titulaire de la carte*</label>
-                    <input type="text" name="titulaire" id="titulaire">
-                </div>
-
-                <div class="numcarte">
-                    <label for="carte">Numéro de carte*</label>
-                    <input type="text" name="carte" id="carte">
-                </div>
-
-                <div class="carteaccepte">
-                    <p class="accepte">Nous acceptons:</p>
-                    <img>
-                </div>
-
-                <div class="expiration">
-                    <label for="mois">Mois</label>
-                    <select required name="mois" id="mois">
-                        <option value="01">01</option>
-                        <option value="02">02</option>
-                        <option value="03">03</option>
-                        <option value="04">04</option>
-                        <option value="05">05</option>
-                        <option value="06">06</option>
-                        <option value="07">07</option>
-                        <option value="08">08</option>
-                        <option value="09">09</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                    </select>
-
-                    <label for="annee">Année</label>
-                    <select required name="annee" id="annee">
-                        <option value="23">2023</option>
-                        <option value="24">2024</option>
-                        <option value="25">2025</option>
-                        <option value="26">2026</option>
-                        <option value="27">2027</option>
-                        <option value="28">2028</option>
-                        <option value="29">2029</option>
-                        <option value="30">2030</option>
-                    </select>
+                            <div class="courriel">
+                                <label for="courriel">Courriel*</label>
+                                <p class="exemple">Exemple: exemple@icloud.com</p>
+                                <input type="text" name="courriel" id="courriel" pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,4})+)$">
+                                <span class="erreur" id="erreur_courriel"></span>
+                            </div>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" name="newsletter" id="newsletter">
+                            <label for="newsletter">Je souhaite recevoir des mise à jour et des renseignements sur
+                                le centre d’aide des portes brisées par courriel</label>
+                        </div>
+                        <div class="bouton_navig">
+                            <input type="button" class="retour" name="retour" value="Retour">
+                            <input type="button" class="boutonsuivant" name="boutonsuivant" value="Continuer">
+                        </div>
+                    </fieldset>
                 </div>
 
-                <div class="cvv">
-                    <div class="cvv">
-                        <label for="cvv">CVV*</label>
-                        <p>Le code de 3-4 chiffres au dos de la carte</p>
-                        <input type="text" name="cvv" id="cvv">
-                    </div>
+                <!--SECTION PAIEMENT-->
+                <div class="section__paiement">
+                    <h2 class="h2"><b>De quelle façon voulez-vous faire votre don?</b></h2>
+                    <fieldset class="formulaire__paiement">
+                        <div class="div__typepaiement">
+                            <div class="cartecredit">
+                                <input required type="radio" name="type_paiement" id="credit">
+                                <label for="credit">Carte de crédit</label>
+                            </div>
+                            <div class="paypal">
+                                <input required type="radio" name="type_paiement" id="paypal">
+                                <label for="paypal">Paypal</label>
+                            </div>
+                        </div>
+                        <span class="erreur" id="erreur_typepaiment"></span>
+
+
+                        <div class="carteaccepte">
+                            <p class="texte">Nous acceptons:</p>
+                            <img class="carte_visa" src="/public/liaisons/images/visa.png" alt="Carte visa">
+                            <img class="carte_mastercard" src="/public/liaisons/images/mastercard.png" alt="Carte mastercard">
+                            <img class="carte_american" src="/public/liaisons/images/americanexp.png" alt="Carte american exepress">
+                            <img class="apple_pay" src="/public/liaisons/images/applepay.png" alt="Apple pay">
+                        </div>
+
+
+                        <div class="infocarte">
+                            <div class="titulaire">
+                                <label for="titulaire">Nom du titulaire de la carte*</label>
+                                <input type="text" name="titulaire" id="titulaire" pattern="^[a-zA-ZÀ-ÿ -/']+$">
+                                <span class="erreur" id="erreur_titulaire"></span>
+                            </div>
+
+                            <div class="numcarte">
+                                <label for="carte">Numéro de carte*</label>
+                                <input type="text" name="carte" id="carte" pattern="\b\d{13,19}\b">
+                                <span class="erreur" id="erreur_carte"></span>
+                            </div>
+
+                            
+                            <div class="expiration">
+                                <div class="mois">
+                                    <label for="mois">Mois</label>
+                                    <select required name="mois" id="mois">
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                </div>
+                                <div class="annee">
+                                    <label for="annee">Année</label>
+                                    <select required name="annee" id="annee">
+                                        <option value="23">2023</option>
+                                        <option value="24">2024</option>
+                                        <option value="25">2025</option>
+                                        <option value="26">2026</option>
+                                        <option value="27">2027</option>
+                                        <option value="28">2028</option>
+                                        <option value="29">2029</option>
+                                        <option value="30">2030</option>
+                                    </select>
+                                    <span class="erreur" id="erreur_date"></span>
+                                </div>
+                            </div>
+
+                                <div class="cvv">
+                                    <label for="cvv">CVV*</label>
+                                    <p class="exemple">Le code de 3-4 chiffres au dos de la carte</p>
+                                    <input type="text" name="cvv" id="cvv" pattern="^\d{3,4}$">
+                                </div>
+                                <span class="erreur" id="erreur_cvv"></span>
+                        </div>
+
+                        <div class="bouton_navig">
+                            <input type="button" class="retour" name="retour" value="Retour">
+                            <input type="submit" class="boutonsuivant" name="boutonsuivant" value="Faire le don">
+                        </div>
+                    </fieldset>
                 </div>
 
-                <div class="bouton_navig">
-                    <input type="button" name="retour" value="Retour">
-                    <input type="button" name="bouttonsuivant" value="Faire le don">
-                </div>
-            </fieldset>
-        </section>
-
-        <section class="section__remerciement">
-            <h1>Merci infiniment pour votre don!</h1>
-            <p class="text__remerciement">Un immense merci pour votre don à notre association de restauration de
-                portes brisées. Votre soutien ne fait pas que réparer des portes, il restaure la foi en la bonté
-                et en la solidarité. Grâce à des personnes comme vous, nous sommes en mesure de répandre le
-                confort et la sécurité dans les foyers qui en ont besoin. Votre geste rappelle que chaque
-                contribution compte énormément. Ensemble, nous construisons un avenir plus fort et plus
-                solidaire.</p>
-            <div class="bouton_navig">
-                <input type="button" name="retour_accueil" value="Retourné à l'accueil">
-                <input type="button" name="autre_don" value="Faire un autre don">
-            </div>
-        </section>
-        </form>
+                <section class="section__remerciement">
+                    <h1>Merci infiniment pour votre don!</h1>
+                    <p class="text__remerciement">Un immense merci pour votre don à notre association de restauration de
+                        portes brisées. Votre soutien ne fait pas que réparer des portes, il restaure la foi en la bonté
+                        et en la solidarité. Grâce à des personnes comme vous, nous sommes en mesure de répandre le
+                        confort et la sécurité dans les foyers qui en ont besoin. Votre geste rappelle que chaque
+                        contribution compte énormément. Ensemble, nous construisons un avenir plus fort et plus
+                        solidaire.</p>
+                        <div class="bouton_navig">
+                            <input type="button" class="retour" name="retour" value="Retour">
+                            <input type="button" class="boutonsuivant" name="boutonsuivant" value="Faire un autre don">
+                        </div>
+                </section>
+            </form>
         </div>
     </main>
 
@@ -264,6 +302,9 @@
         <p>Lorem ipsum dolor nunc aut nunquam sit amet, consectetur adipiscing elit. Vivamus at est eros, vel fringilla
             urna. Pellentesque odio rhoncus</p>
     </footer> -->
+
+    <script src="/public/liaisons/js/validation.js"></script>
+    <script>validation.chargeJSON("/public/liaisons/js/objJSONMessages.json");</script>
 </body>
 
 </html>

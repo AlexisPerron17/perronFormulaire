@@ -1,0 +1,43 @@
+{
+    "prenom": {
+        "vide": "Vous devez entrer votre prénom.",
+        "pattern": "Pour le prénom, les accents français, les espaces, les tirets et les apostrophes sont permis."
+    },
+    "nom": {
+        "vide": "Vous devez entrer votre nom de famille.",
+        "pattern": "Pour le nom de famille, les accents français, les espaces, les tirets et les apostrophes sont permis."
+    },
+    "courriel": {
+        "vide": "Vous devez entrer votre adresse courriel.",
+        "pattern": "Assurez-vous d'entrer une adresse courriel valide. Référez-vous à l'exemple."
+    },
+    "adresse": {
+        "vide": "Vous devez entrer un adresse résidentielle.",
+        "pattern": "Entrez une adresse résidentielle valide."
+    },
+    "codepostal": {
+        "vide": "Vous devez entrer un code postal.",
+        "pattern": "Entrer un code postale valide. Référez-vous à l'exemple."
+    },
+
+    "ville": {
+        "vide": "Vous devez entrer un nom de ville.",
+        "pattern": "Entrez un nom de ville valide."
+    },
+    "telephone": {
+        "vide": "Vous devez entrer un numéro de téléphone.",
+        "pattern": "Entrer un numéro de téléphone valide. Référez-vous à l'exemple."
+    },
+    "titulaire": {
+        "vide": "Vous devez entrer le titulaire de la carte.",
+        "pattern": "Entrer un nom valide."
+    },
+    "carte": {
+        "vide": "Vous devez entrer un numéro de carte.",
+        "pattern": "Entrer un numéro de carte valide."
+    },
+    "cvv": {
+        "vide": "Vous devez entrer un cvv",
+        "pattern": "Entrer un un cvv valide"
+    }
+}

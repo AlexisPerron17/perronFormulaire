@@ -1,6 +1,9 @@
 .main {
     padding: 0px 20px;
     // float: left;
+    @media(min-width: 600px) {
+        padding: 0px 20%;
+    }
 }
 
 .header {
@@ -11,11 +14,104 @@
     }
 }
 
+h1 {
+    margin-top: 5rem;
+}
+
+fieldset {
+    border:none;
+    @media(min-width: 600px){
+        border-left: 3px solid #F36421;
+        border-right: none;
+        border-top:none;
+        border-bottom: none;
+    }
+}
+
+.erreur {
+    color:$rougeErreur;
+    width: 200px;
+}
+.erreur__input {
+    border-color: $rougeErreur !important;
+}
+
+
+//Step-left
+
+/*progressbar*/
+
+#stepleft {
+	margin: 4rem 0;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+    padding:0;
+}
+#stepleft li {
+	list-style-type: none;
+	color: black;
+	text-transform: uppercase;
+	font-size: 1.4rem;
+	width: 33.33%;
+	float: left;
+	position:relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+#stepleft li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 25px;
+	line-height: 25px;
+	display: block;
+	font-size: 12px;
+	color: white;
+	border: 2px solid $bleuFonce;
+    background-color: black;
+	border-radius: 20px;
+	margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#stepleft li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: black;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1; /*put it behind the numbers*/
+}
+#stepleft li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#stepleft li.active:before,  #stepleft li.active:after{
+	background: $bleuFonce;
+	color: black;
+}
+
+
+
+
 // TYPE DE DON ET MONTANT
+
+.formulaire__typedon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 // BOUTON RADIO TYPE DE DON
 .div__typedon {
     display: flex;
-    margin-bottom: 3rem;
+    margin: 3rem 0;
     overflow: hidden;
 }
 .div__typedon input {
@@ -32,14 +128,13 @@
     font-size: 18px;
     line-height: 1;
     text-align: center;
-    padding: 17px 16px 15px;
+    padding: 17px 10px 15px;
     border: 3px solid black;
     border-radius: 10px;
     transition: all 0.2s ease-in-out;
+    margin: 0 0.5rem;
 }
-.label_type:last-child {
-    margin-left: 10px;
-}
+
 
 .div__typedon label:hover {
     cursor: pointer;
@@ -67,6 +162,7 @@
 .div__listedon {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin-bottom: 3rem;
     overflow: hidden;
 }
@@ -106,4 +202,298 @@
 
 .div__listedon input:checked + label{
     border: 3px solid $bleuFonce;
+}
+
+
+
+
+
+//VOS INFORMATIONS
+
+.formulaire__informations {
+    @media(min-width: 600px){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.don_autre_nom input {
+   margin-right: 1rem;
+}
+.organisation {
+    display: flex;
+    padding-top: 1.5rem;
+}
+.memoire {
+    display: flex;
+    padding-bottom: 4.5rem;
+}
+
+.informations {
+    display: flex;
+    flex-direction: column;
+    
+    input {
+        border: 2px solid black;
+        border-radius: 6px;
+        height: 2.5rem;
+    }
+    // @media(min-width: 600px){
+    //     div {
+    //         // height: 3rem;
+    //         margin-bottom: 5.5rem;
+    //     }
+    // }
+}
+
+
+
+.prenom, .nom, .ville, .titulaire {
+display: flex;
+flex-direction: column;
+margin-bottom: 4.5rem;
+    input {
+        width: 185px;
+    }
+    @media(min-width: 600px){
+        input {
+        width:220px;
+        height: 3rem;
+        }
+        margin-bottom: 5.5rem;
+    }
+}
+
+.adresse, .courriel {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4.5rem;
+    input {
+        width: 280px;
+    }
+    @media(min-width: 600px){
+        input {
+        width:320px;
+        height: 3rem;
+        }
+        margin-bottom: 5.5rem;
+        
+    }
+}
+
+.codepostal {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4.5rem;
+    input {
+        width: 100px;
+    }
+    .div_exemple {
+        display:flex;
+        flex-direction: column;
+    }
+    @media(min-width: 600px){
+        input {
+        width:150px;
+        height: 3rem;
+        }
+        margin-bottom: 5.5rem;
+    }
+}
+
+
+.pays, .provinces {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 4.5rem;
+    select {
+        border: 2px solid black;
+        border-radius: 6px;
+        height: 3rem;
+    }
+    @media(min-width: 600px){
+        margin-bottom: 5.5rem;
+        select{
+            height: 3.5rem;
+    }
+}
+}
+
+.telephone {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4.5rem;
+    input {
+        width: 220px;
+    }
+    .div_exemple {
+        display:flex;
+        flex-direction: column;
+    }
+    @media(min-width: 600px){
+        input {
+        width:250px;
+        height: 3rem;
+        }
+        margin-bottom: 5.5rem;
+    }
+}
+
+.poste {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4.5rem;
+    input {
+        width: 100px;
+    }
+    @media(min-width: 600px){
+        input {
+        height: 3rem;
+        }
+        margin-bottom: 5.5rem;
+    }
+}
+
+.checkbox {
+    @media(min-width: 600px) {
+        width: 52%;
+    }
+}
+
+
+
+//PAIEMENT
+
+.formulaire__paiement {
+    @media(min-width: 600px){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+//CARTE DE CRÉDIT - PAYPAL
+.div__typepaiement {
+    display: flex;
+    margin: 3rem 0;
+    justify-content: center;
+}
+.div__typepaiement input {
+    position: absolute !important;
+    clip:rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    border: 3px;
+    overflow: hidden;
+}
+
+.div__typepaiement label {
+    background-color: white;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px 10px 10px;
+    border: 3px solid black;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+    margin: 0 0.5rem;
+}
+
+
+.div__typepaiement label:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    border: 3px solid $bleuFonce;
+}
+
+
+.div__typepaiement input{
+    font-size: 18px;
+    line-height: 1;
+    text-align: center;
+    transition: all 0.1s ease-in-out;
+    overflow: hidden;
+
+}
+
+.div__typepaiement input:checked + label{
+    border: 3px solid $bleuFonce;
+    
+}
+
+//IMG DES CARTES ACCPETÉS
+.carteaccepte{
+    padding-top: 2rem;
+}
+.carte_visa {
+    max-width: 5rem;
+}
+.carte_mastercard{
+    max-width: 5.5rem;
+}
+.carte_american {
+    max-width: 4rem;
+}
+.apple_pay{
+    max-width: 5.5rem;
+}
+
+.infocarte {
+    display: flex;
+    flex-direction: column;
+    input {
+        border: 2px solid black;
+        border-radius: 6px;
+        height: 2.5rem;
+        @media(min-width: 600px){
+            height: 3rem;       
+        }
+    }
+}
+
+.titulaire {
+    margin-top: 3rem;
+    margin-bottom: 4.5rem;
+    @media(min-width: 600px){
+        margin-bottom: 5.5rem;
+    }
+}
+
+.numcarte {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4.5rem;
+    input {
+        width: 250px;
+    }
+    @media(min-width: 600px){
+        margin-bottom: 5.5rem;
+    }
+}
+
+.expiration {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 4.5rem;
+    .annee{
+        margin-left: 2rem;
+    }
+}
+
+.mois, .annee {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    select {
+        border: 2px solid black;
+        border-radius: 6px;
+        height: 3rem;
+    }
+}
+
+.cvv input {
+    width: 100px;
 }
