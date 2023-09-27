@@ -28,6 +28,14 @@ fieldset {
     }
 }
 
+.section__info {
+    display: none;
+}
+.section__paiement {
+    display: none;
+}
+
+
 .erreur {
     color:$rougeErreur;
     width: 200px;
@@ -36,15 +44,16 @@ fieldset {
     border-color: $rougeErreur !important;
 }
 
+.hidden {
+    display: none;
+}
+
 
 //Step-left
-
-/*progressbar*/
 
 #stepleft {
 	margin: 4rem 0;
 	overflow: hidden;
-	/*CSS counters to number the steps*/
 	counter-reset: step;
     padding:0;
 }
@@ -83,14 +92,12 @@ fieldset {
 	position: absolute;
 	left: -50%;
 	top: 9px;
-	z-index: -1; /*put it behind the numbers*/
+	z-index: -1;
 }
 #stepleft li:first-child:after {
-	/*connector not needed before the first step*/
 	content: none; 
 }
-/*marking active/completed steps green*/
-/*The number of the step and the connector before it = green*/
+
 #stepleft li.active:before,  #stepleft li.active:after{
 	background: $bleuFonce;
 	color: black;
@@ -111,7 +118,8 @@ fieldset {
 // BOUTON RADIO TYPE DE DON
 .div__typedon {
     display: flex;
-    margin: 3rem 0;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
     overflow: hidden;
 }
 .div__typedon input {
@@ -163,7 +171,7 @@ fieldset {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 3rem;
+    margin-top: 5rem;
     overflow: hidden;
 }
 .div__listedon input {
@@ -239,12 +247,6 @@ fieldset {
         border-radius: 6px;
         height: 2.5rem;
     }
-    // @media(min-width: 600px){
-    //     div {
-    //         // height: 3rem;
-    //         margin-bottom: 5.5rem;
-    //     }
-    // }
 }
 
 
@@ -496,4 +498,13 @@ margin-bottom: 4.5rem;
 
 .cvv input {
     width: 100px;
+}
+
+.footer {
+    background-color: $bleuFonce;
+    text-align: center;
+    margin: 0px;
+    margin-top: 3rem;
+    padding: 3rem 0;
+
 }

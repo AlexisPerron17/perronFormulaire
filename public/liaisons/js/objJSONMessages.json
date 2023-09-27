@@ -37,7 +37,24 @@
         "pattern": "Entrer un numéro de carte valide."
     },
     "cvv": {
-        "vide": "Vous devez entrer un cvv",
-        "pattern": "Entrer un un cvv valide"
+        "vide": "Vous devez entrer un cvv.",
+        "pattern": "Entrer un un cvv valide."
+    },
+    "montant": {
+        "vide": "Vous devez choisir un type de don et un montant."
+    },
+    "typepaiement": {
+        "vide": "Vous devez choisir un type paiement."
+    },
+    "montant_autre": {
+        "vide": "Vous devez entrer un montant personnalisé.",
+        "pattern": "Entrer un montant valide"
+    },
+    "pays": {
+        "vide": "Vous devez choisir un pays"
+    },
+    "provinces": {
+        "vide": "Vous devez choisir une province"
     }
+
 }
